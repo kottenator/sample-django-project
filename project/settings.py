@@ -1,3 +1,7 @@
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '...'
 DEBUG = True
 
@@ -31,6 +35,10 @@ TEMPLATES = [
 ROOT_URLCONF = 'project.urls'
 WSGI_APPLICATION = 'project.wsgi.application'
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'node_modules')
+]
 
 DATABASES = {
     'default': {

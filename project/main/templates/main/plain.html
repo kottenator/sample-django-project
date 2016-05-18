@@ -1,12 +1,25 @@
 {% extends 'base/index.html' %}
 
+{% load static %}
+
 {% block title %}Plain scripts / {{ block.super }}{% endblock %}
 
+{% block js %}
+  <script src="{% static 'jquery/dist/jquery.js' %}"></script>
+  <script src="{% static 'base/plain.js' %}"></script>
+  <script src="{% static 'main/plain.js' %}"></script>
+{% endblock %}
+
 {% block content %}
-  <h2 class="demo-title">Hello, world!</h2>
+  <h2 class="demo-title">Plain scripts</h2>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi id labore quidem! Corporis
-    cumque debitis deleniti dolore, doloribus eius eveniet excepturi id nostrum odio officia qui,
-    quis repudiandae ullam veniam.
+    Plain <code>&lt;script&gt;</code> tags inclusion.
   </p>
+  <ul>
+    <li>Simple & most common option</li>
+    <li>May be in multiple Django templates</li>
+    <li>Script relations are implicit</li>
+    <li>May be hard to have multiple versions</li>
+    <li>May be hard to handle version conflicts</li>
+  </ul>
 {% endblock %}

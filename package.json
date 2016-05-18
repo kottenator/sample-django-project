@@ -1,0 +1,9 @@
+{
+  "name": "sample-django-project",
+  "version": "0.0.1",
+  "description": "Discover different ways of static files handling.",
+  "author": "Rostyslav Bryzgunov",
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
