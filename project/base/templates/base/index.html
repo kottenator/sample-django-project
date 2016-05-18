@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sample Django Project{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base/fonts/Open Sans/font.css' %}">
+    <link rel="stylesheet" href="{% static 'base/page.css' %}">
+    <link rel="stylesheet" href="{% static 'base/demo.css' %}">
+  </head>
+<body>
+  {% block content %}{% endblock %}
+  {% block js %}{% endblock %}
+</body>
+</html>
