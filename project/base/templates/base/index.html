@@ -11,7 +11,17 @@
     <link rel="stylesheet" href="{% static 'base/demo.css' %}">
   </head>
 <body>
-  {% block content %}{% endblock %}
-  {% block js %}{% endblock %}
+  {% block content %}
+    <h2 class="demo-title">Sample Django Project</h2>
+    <p>
+      Discover different ways of static files handling.
+    </p>
+    <nav class="navigation">
+      <a class="next" href="{% url 'plain' %}">Plain scripts</a>
+    <nav>
+  {% endblock %}
+
+  {% block js %}
+  {% endblock %}
 </body>
 </html>

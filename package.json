@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Discover different ways of static files handling.",
   "author": "Rostyslav Bryzgunov",
+  "license": "MIT",
+  "repository": {},
   "dependencies": {
-    "jquery": "^2.2.3"
+    "jquery": "^2.2.3",
+    "requirejs": "^2.2.0"
   }
 }

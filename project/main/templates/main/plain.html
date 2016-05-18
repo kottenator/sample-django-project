@@ -15,11 +15,22 @@
   <p>
     Plain <code>&lt;script&gt;</code> tags inclusion.
   </p>
-  <ul>
-    <li>Simple & most common option</li>
-    <li>May be in multiple Django templates</li>
-    <li>Script relations are implicit</li>
-    <li>May be hard to have multiple versions</li>
-    <li>May be hard to handle version conflicts</li>
+  <ul class="pros-cons">
+    <li><i>+</i> Simple & most common option</li>
+    <li><i>+</i> Fastest in development (no processing)</li>
+    <li><i>+</i> Easy to debug</li>
+    <li><i>+</i> Integrated with Django</li>
+    <li><i>-</i> Script relations are implicit</li>
+    <li><i>-</i> <em>Maybe</em> located in multiple files</li>
+    <li><i>-</i> <em>Maybe</em> hard to have multiple versions or handle version conflicts</li>
+    <li><i>-</i> <em>Maybe</em> hard to use with ES6</li>
   </ul>
+  <p>
+    <strong>Test it:</strong> open your browser console and look for messages. <br>
+    Also, take a look at the code in <code>main/plain.html</code> template.
+  </p>
+  <nav class="navigation">
+    <a class="prev" href="{% url 'index' %}">Home</a>
+    <a class="next" href="{% url 'amd' %}">AMD</a>
+  </nav>
 {% endblock %}

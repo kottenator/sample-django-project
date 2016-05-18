@@ -3,7 +3,9 @@ project.base = project.base || {};
 
 project.base.plain = {
   x: 42,
-  init: function() {}
+  init: function() {
+    console.log("`project.base.plain` inited");
+  }
 };
 
 $(function() {

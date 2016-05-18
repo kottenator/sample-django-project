@@ -1,0 +1,45 @@
+{% extends 'base/index.html' %}
+
+{% load static %}
+
+{% block title %}AMD / {{ block.super }}{% endblock %}
+
+{% block js %}
+  <script src="{% static 'requirejs/require.js' %}"></script>
+  <script>
+    requirejs.config({
+      baseUrl: '{% get_static_prefix %}',
+      paths: {
+        'jquery': 'jquery/dist/jquery'
+      }
+    });
+    requirejs(['main/amd']);
+  </script>
+{% endblock %}
+
+{% block content %}
+  <h2 class="demo-title">AMD</h2>
+  <p>
+    The Asynchronous Module Definition
+    (<a href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md">AMD</a>)
+    and one of its most popular implementations - <a href="http://requirejs.org/">RequireJS</a>.
+  </p>
+  <ul class="pros-cons">
+    <li><i>+</i> Script relations are explicit</li>
+    <li><i>+</i> Fast in development (only dynamic <code>&lt;script&gt;</code> tags inclusion)</li>
+    <li><i>+</i> Flat requirements model (no duplications)</li>
+    <li><i>+</i> Easier to have multiple versions or handle version conflicts</li>
+    <li><i>-</i> Harder to debug</li>
+    <li><i>-</i> Pretty complicated (try to read the docs)</li>
+    <li><i>-</i> Not perfectly integrated with Django (may require complex configuration)</li>
+    <li><i>-</i> <em>Maybe</em> hard to use with ES6</li>
+  </ul>
+  <p>
+    <strong>Test it:</strong> open your browser console and look for messages. <br>
+    Also, take a look at the code in <code>main/amd.html</code> template.
+  </p>
+  <nav class="navigation">
+    <a class="prev" href="{% url 'plain' %}">Plain scripts</a>
+    <a class="next" href="#">Back-end bundling</a>
+  </nav>
+{% endblock %}
