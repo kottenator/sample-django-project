@@ -6,7 +6,9 @@ Discover different ways of static files handling.
 
 ```sh
 git clone ...
-pip install -r requiremens.txt
+virtualenv -p python3 venv
+. venv/bin/activate
+pip install -r requirements.txt
 npm install
 ```
 

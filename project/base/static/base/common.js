@@ -4,7 +4,7 @@ var common = {
   x: 42,
   
   init: function() {
-    console.log("`base/common` inited");
+    console.log("`base/common` initialized!");
   }
 };
 
