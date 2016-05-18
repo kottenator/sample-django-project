@@ -17,4 +17,6 @@ define(['jquery', 'base/amd', 'main/amd-2'], function ($, baseAMD) {
   $(function() {
     amd.init();
   });
+  
+  return amd;
 });

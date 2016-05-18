@@ -8,7 +8,6 @@
     <title>{% block title %}Sample Django Project{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'base/fonts/Open Sans/font.css' %}">
     <link rel="stylesheet" href="{% static 'base/page.css' %}">
-    <link rel="stylesheet" href="{% static 'base/demo.css' %}">
   </head>
 <body>
   {% block content %}
@@ -18,7 +17,7 @@
     </p>
     <nav class="navigation">
       <a class="next" href="{% url 'plain' %}">Plain scripts</a>
-    <nav>
+    </nav>
   {% endblock %}
 
   {% block js %}

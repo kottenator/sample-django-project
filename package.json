@@ -8,5 +8,13 @@
   "dependencies": {
     "jquery": "^2.2.3",
     "requirejs": "^2.2.0"
+  },
+  "devDependencies": {
+    "browserify": "*",
+    "watchify": "*"
+  },
+  "scripts": {
+    "common-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ browserify project/main/static/main/common.js -o project/main/static/main/common-bundle.js",
+    "watch-common-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ watchify project/main/static/main/common.js -o project/main/static/main/common-bundle.js"
   }
 }
