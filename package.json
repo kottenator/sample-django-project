@@ -11,10 +11,13 @@
   },
   "devDependencies": {
     "browserify": "*",
-    "watchify": "*"
+    "watchify": "*",
+    "babelify": "*"
   },
   "scripts": {
     "common-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ browserify project/main/static/main/common.js -o project/main/static/main/common-bundle.js",
-    "watch-common-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ watchify project/main/static/main/common.js -o project/main/static/main/common-bundle.js"
+    "watch-common-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ watchify project/main/static/main/common.js -o project/main/static/main/common-bundle.js",
+    "es6-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ browserify project/main/static/main/es6.js -o project/main/static/main/es6-bundle.js -t [ babelify --presets=babel-preset-es2015 ]",
+    "watch-es6-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ watchify project/main/static/main/es6.js -o project/main/static/main/es6-bundle.js -t [ babelify --presets=babel-preset-es2015 ]"
   }
 }

@@ -1,4 +1,4 @@
-define(['jquery', 'base/amd', 'main/amd-2'], function ($, baseAMD) {
+define(['jquery', 'base/amd', 'main/amd-2'], function ($, base) {
   var amd = {
     x: 42,
 
@@ -9,7 +9,7 @@ define(['jquery', 'base/amd', 'main/amd-2'], function ($, baseAMD) {
     doTogether: function() {
       console.log(
         "`main/amd` doing calculation together with `base/amd`:",
-        baseAMD.x + this.x
+        base.x + this.x
       );
     }
   };

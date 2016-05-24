@@ -1,6 +1,7 @@
 var $ = require('jquery');
-var mainCommon21 = require('main/common-2');
-var baseCommon = require('base/common');
+var base = require('base/common');
+
+require('main/common-2');
 
 var common = {
   x: 42,
@@ -12,7 +13,7 @@ var common = {
   doTogether: function() {
     console.log(
       "`main/common` doing calculation together with `base/common`:",
-      baseCommon.x + this.x
+      base.x + this.x
     );
   }
 };

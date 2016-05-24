@@ -2,18 +2,17 @@
 
 {% load static %}
 
-{% block title %}CommonJS / {{ block.super }}{% endblock %}
+{% block title %}ES6 modules / {{ block.super }}{% endblock %}
 
 {% block js %}
-  <script src="{% static 'main/common-bundle.js' %}"></script>
+  <script src="{% static 'main/es6-bundle.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-  <h2 class="demo-title">CommonJS</h2>
+  <h2 class="demo-title">ES6 modules</h2>
   <p>
-    Server-side dependencies compilation.
-    <code>CommonJS</code> is implemented in Node.js as default module loader
-    (e.g. <code>var $ = require('jquery')</code>).
+    New JS standard: <code>import $ from 'jquery'</code>.
+    Until natively supported, ES6 modules are transpiled to CommonJS via Browserify.
   </p>
   <ul class="pros-cons">
     <li><i>+</i> Script relations are explicit</li>
@@ -26,10 +25,9 @@
   </ul>
   <p>
     <strong>Test it:</strong> open your browser console and look for messages. <br>
-    Also, take a look at the code in <code>main/common.html</code> template.
+    Also, take a look at the code in <code>main/es6.html</code> template.
   </p>
   <nav class="navigation">
-    <a class="prev" href="{% url 'amd' %}">AMD</a>
-    <a class='next' href="{% url 'es6' %}">ES6 modules</a>
+    <a class="prev" href="{% url 'common' %}">CommonJS</a>
   </nav>
 {% endblock %}
