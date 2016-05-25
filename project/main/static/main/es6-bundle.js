@@ -9900,7 +9900,7 @@ require('main/es6-2');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var common = {
+var es6 = {
   x: 42,
 
   init: function init() {
@@ -9912,9 +9912,9 @@ var common = {
 };
 
 (0, _jquery2.default)(function () {
-  return common.init();
+  return es6.init();
 });
 
-exports.default = common;
+exports.default = es6;
 
 },{"base/es6":2,"jquery":1,"main/es6-2":3}]},{},[4]);

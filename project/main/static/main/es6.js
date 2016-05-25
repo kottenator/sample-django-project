@@ -2,7 +2,7 @@ import $ from 'jquery';
 import base from 'base/es6';
 import 'main/es6-2';
 
-var common = {
+var es6 = {
   x: 42,
 
   init() {
@@ -17,6 +17,6 @@ var common = {
   }
 };
 
-$(() => common.init());
+$(() => es6.init());
 
-export default common;
+export default es6;
