@@ -2,33 +2,36 @@
 
 {% load static %}
 
-{% block title %}ES6 modules / {{ block.super }}{% endblock %}
+{% block title %}ES6 modules + shim / {{ block.super }}{% endblock %}
 
 {% block js %}
-  <script src="{% static 'main/es6-bundle.js' %}"></script>
+  <script src="{% static 'jquery/dist/jquery.js' %}"></script>
+  <script src="{% static 'main/es6-shim-bundle.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-  <h2 class="demo-title">ES6 modules</h2>
+  <h2 class="demo-title">ES6 modules + shim</h2>
   <p>
     New JS standard: <code>import $ from 'jquery'</code>.
     Until natively supported, ES6 modules are transpiled to CommonJS via Browserify.
+    3rd-party libraries (like jQuery) can be excluded from the bundle.
   </p>
   <ul class="pros-cons">
     <li><i>+</i> Script relations are explicit</li>
     <li><i>+</i> Tree requirements model</li>
     <li><i>+</i> Easy to have multiple versions, no version conflicts</li>
     <li><i>+</i> Easy to use with ES6</li>
+    <li><i>+</i> Allows to avoid bundling of 3rd-party libraries</li>
     <li><i>-</i> Slower in development (bundle re-build on each change)</li>
     <li><i>-</i> Not perfectly integrated with Django</li>
     <li><i>-</i> <em>Maybe</em> harder to debug</li>
   </ul>
   <p>
     <strong>Test it:</strong> open your browser console and look for messages. <br>
-    Also, take a look at the code in <code>main/es6.html</code> template.
+    Also, take a look at the code in <code>main/es6.html</code> template. <br>
+    It's similar to the previous example but bundle doesn't include jQuery now.
   </p>
   <nav class="navigation">
-    <a class="prev" href="{% url 'common' %}">CommonJS</a>
-    <a class="next" href="{% url 'es6-shim' %}">ES6 modules + shim</a>
+    <a class="prev" href="{% url 'es6' %}">ES6 modules</a>
   </nav>
 {% endblock %}

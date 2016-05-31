@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^amd/$', TemplateView.as_view(template_name='main/amd.html'), name='amd'),
     url(r'^common/$', TemplateView.as_view(template_name='main/common.html'), name='common'),
     url(r'^es6/$', TemplateView.as_view(template_name='main/es6.html'), name='es6'),
+    url(r'^es6-shim/$', TemplateView.as_view(template_name='main/es6-shim.html'), name='es6-shim'),
 ]

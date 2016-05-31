@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "browserify": "*",
+    "browserify-shim": "*",
     "watchify": "*",
     "babelify": "*"
   },
@@ -18,6 +19,10 @@
     "common-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ browserify project/main/static/main/common.js -o project/main/static/main/common-bundle.js",
     "watch-common-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ watchify project/main/static/main/common.js -o project/main/static/main/common-bundle.js",
     "es6-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ browserify project/main/static/main/es6.js -o project/main/static/main/es6-bundle.js -t [ babelify --presets=babel-preset-es2015 ]",
-    "watch-es6-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ watchify project/main/static/main/es6.js -o project/main/static/main/es6-bundle.js -t [ babelify --presets=babel-preset-es2015 ]"
+    "watch-es6-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ watchify project/main/static/main/es6.js -o project/main/static/main/es6-bundle.js -t [ babelify --presets=babel-preset-es2015 ]",
+    "es6-shim-bundle": "NODE_PATH=$NODE_PATH:project/base/static/:project/main/static/ browserify project/main/static/main/es6.js -o project/main/static/main/es6-shim-bundle.js -t [ babelify --presets=babel-preset-es2015 ] -t [ browserify-shim ]"
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
   }
 }
