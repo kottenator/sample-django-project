@@ -1,18 +1,24 @@
-{% extends 'base/index.html' %}
+{% extends 'base/page.html' %}
 
 {% load static %}
 
-{% block title %}ES6 modules / {{ block.super }}{% endblock %}
+{% block title %}ES6 bundle / {{ block.super }}{% endblock %}
 
 {% block js %}
+  {{ block.super }}
   <script src="{% static 'main/es6-bundle.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-  <h2 class="demo-title">ES6 modules</h2>
+  <h2 class="demo-title">ES6 bundle</h2>
+  <pre><code>import $ from 'jquery';
+import base from 'base/es6';
+
+$(() => console.log(base.x + 42));</code></pre>
   <p>
-    New JS standard: <code>import $ from 'jquery'</code>.
-    Until natively supported, ES6 modules are transpiled to CommonJS via Browserify.
+    New JS standard.
+    Until natively supported, ES6 modules can be transpiled to ES5 & CommonJS
+    and then bundled like in the previous example.
   </p>
   <ul class="pros-cons">
     <li><i>+</i> Script relations are explicit</li>
@@ -24,11 +30,12 @@
     <li><i>-</i> <em>Maybe</em> harder to debug</li>
   </ul>
   <p>
-    <strong>Test it:</strong> open your browser console and look for messages. <br>
-    Also, take a look at the code in <code>main/es6.html</code> template.
+    <em>Test it:</em> open your browser console and look for messages.
+    Also, take a look at the code in <code>main/es6.html</code> template
+    and in the linked JS files.
   </p>
   <nav class="navigation">
     <a class="prev" href="{% url 'common' %}">CommonJS</a>
-    <a class="next" href="{% url 'es6-shim' %}">ES6 modules + shim</a>
+    <a class="next" href="{% url 'es6-shim' %}">ES6 bundle + shim</a>
   </nav>
 {% endblock %}

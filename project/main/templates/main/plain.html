@@ -1,10 +1,11 @@
-{% extends 'base/index.html' %}
+{% extends 'base/page.html' %}
 
 {% load static %}
 
 {% block title %}Plain scripts / {{ block.super }}{% endblock %}
 
 {% block js %}
+  {{ block.super }}
   <script src="{% static 'jquery/dist/jquery.js' %}"></script>
   <script src="{% static 'base/plain.js' %}"></script>
   <script src="{% static 'main/plain.js' %}"></script>
@@ -12,6 +13,9 @@
 
 {% block content %}
   <h2 class="demo-title">Plain scripts</h2>
+  <pre><code>&lt;script src="{% static 'jquery/dist/jquery.js' %}"&gt;&lt;/script&gt;
+&lt;script src="{% static 'base/plain.js' %}"&gt;&lt;/script&gt;
+&lt;script src="{% static 'main/plain.js' %}"&gt;&lt;/script&gt;</code></pre>
   <p>
     Plain <code>&lt;script&gt;</code> tags inclusion.
   </p>
@@ -26,8 +30,9 @@
     <li><i>-</i> <em>Maybe</em> hard to use with ES6</li>
   </ul>
   <p>
-    <strong>Test it:</strong> open your browser console and look for messages. <br>
-    Also, take a look at the code in <code>main/plain.html</code> template.
+    <em>Test it:</em> open your browser console and look for messages.
+    Also, take a look at the code in <code>main/plain.html</code> template
+    and in the linked JS files.
   </p>
   <nav class="navigation">
     <a class="prev" href="{% url 'index' %}">Home</a>

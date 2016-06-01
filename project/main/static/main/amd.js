@@ -1,4 +1,4 @@
-define(['jquery', 'base/amd', 'main/amd-2'], function ($, base) {
+define(['jquery', 'base/amd', 'main/amd-2'], function($, base) {
   var amd = {
     x: 42,
 
@@ -17,6 +17,6 @@ define(['jquery', 'base/amd', 'main/amd-2'], function ($, base) {
   $(function() {
     amd.init();
   });
-  
+
   return amd;
 });

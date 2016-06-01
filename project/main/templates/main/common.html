@@ -1,19 +1,25 @@
-{% extends 'base/index.html' %}
+{% extends 'base/page.html' %}
 
 {% load static %}
 
-{% block title %}CommonJS / {{ block.super }}{% endblock %}
+{% block title %}CommonJS bundle / {{ block.super }}{% endblock %}
 
 {% block js %}
+  {{ block.super }}
   <script src="{% static 'main/common-bundle.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-  <h2 class="demo-title">CommonJS</h2>
+  <h2 class="demo-title">CommonJS bundle</h2>
+  <pre><code>var $ = require('jquery');
+var base = require('base/common');
+
+$(function() {
+  console.log(base.x + 42);
+});</code></pre>
   <p>
-    Server-side dependencies compilation.
-    <code>CommonJS</code> is implemented in Node.js as default module loader
-    (e.g. <code>var $ = require('jquery')</code>).
+    CommonJS is default module loader in Node.js.
+    It can be used to compile JS bundle on the server-side.
   </p>
   <ul class="pros-cons">
     <li><i>+</i> Script relations are explicit</li>
@@ -25,11 +31,12 @@
     <li><i>-</i> <em>Maybe</em> harder to debug</li>
   </ul>
   <p>
-    <strong>Test it:</strong> open your browser console and look for messages. <br>
-    Also, take a look at the code in <code>main/common.html</code> template.
+    <em>Test it:</em> open your browser console and look for messages.
+    Also, take a look at the code in <code>main/common.html</code> template
+    and in the linked JS files.
   </p>
   <nav class="navigation">
     <a class="prev" href="{% url 'amd' %}">AMD</a>
-    <a class='next' href="{% url 'es6' %}">ES6 modules</a>
+    <a class='next' href="{% url 'es6' %}">ES6 bundle</a>
   </nav>
 {% endblock %}

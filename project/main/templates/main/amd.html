@@ -1,10 +1,11 @@
-{% extends 'base/index.html' %}
+{% extends 'base/page.html' %}
 
 {% load static %}
 
 {% block title %}AMD / {{ block.super }}{% endblock %}
 
 {% block js %}
+  {{ block.super }}
   <script src="{% static 'requirejs/require.js' %}"></script>
   <script>
     requirejs.config({
@@ -19,6 +20,12 @@
 
 {% block content %}
   <h2 class="demo-title">AMD</h2>
+  <pre><code>// main/amd.js
+define(['jquery', 'base/amd'], function($, base) {
+  $(function() {
+    console.log(base.x + 42);
+  });
+});</code></pre>
   <p>
     The Asynchronous Module Definition
     (<a href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md">AMD</a>)
@@ -35,8 +42,9 @@
     <li><i>-</i> <em>Maybe</em> hard to use with ES6</li>
   </ul>
   <p>
-    <strong>Test it:</strong> open your browser console and look for messages. <br>
-    Also, take a look at the code in <code>main/amd.html</code> template.
+    <em>Test it:</em> open your browser console and look for messages.
+    Also, take a look at the code in <code>main/amd.html</code> template
+    and in the linked JS files.
   </p>
   <nav class="navigation">
     <a class="prev" href="{% url 'plain' %}">Plain scripts</a>
